@@ -1,0 +1,323 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap HelloWorld</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        body {
+            padding-top: 25px;
+        }
+
+        div {
+            width: 250px;
+            height: 404px;
+            border: 8px solid #CCCCCC;
+            background-color:#E4B9B9;
+            /*#EEEEEE F2DEDE F7ECB5 E4B9B9 777777 CCCCCC D0E9C6 C4E3F3 FCF8E3 FAF2CC F2DEDE DDDDDD*/
+            margin: auto;
+        }
+        .a1{
+            padding-left: 5px;
+            padding-top: 2px;
+            padding-right:5px;
+
+        }
+        .a2{
+            font-size: 18px;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 2px;
+            background-color:#F2DEDE ;
+        }
+        .a3{
+            padding-left: 2px;
+            padding-top: 2px;
+            font-size: 16px;
+        }
+        .a4{
+            font-size: 16px;
+            padding-left: 12px;
+            padding-right: 10px;
+            padding-top: 2px;
+            background-color: #D0E9C6;
+
+        }
+        .a5{
+            font-size: 17px;
+            padding-left: 8px;
+            padding-right: 8px;
+
+        }
+        .a6{
+            font-size: 16px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 2px;
+            background-color: #D0E9C6;
+        }
+        /*table,tr,td{border-bottom:#333 1px dashed;width:100% }*/
+        #ssd1{
+            height: 50px;
+
+        }
+        #ssd2{
+            height: 35px;
+        }
+        #bt1,#bt2,#bt3,#bt4,#bt5{
+        background-color: #F7ECB5;
+            /*F2DEDE F7ECB5 E4B9B9 777777 CCCCCC D0E9C6 C4E3F3 FCF8E3 FAF2CC F2DEDE DDDDDD*/
+        }
+    </style>
+</head>
+<body>
+<div>
+    <table class="table table-bordered table-hover table-condensed ">
+        <tr>
+            <td colspan='4'>
+                <button id="bt1_1">
+                    <input type='text' value="0" id='ssd1'>
+                    <input type='text' value="0" id='ssd2'>
+                    <input type='text'  id='ssd3' placeholder="***********银河三号************">
+                </button>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="a1 ">
+                <button type="button" class="btn btn-default btn-lg active a3" onclick="clean()">AC</button>
+            </td>
+            <td class="a1">
+                <button type="button" class="btn btn-default btn-lg active a3"  onclick="back1()"><<</button>
+            </td>
+            <td class="a1">
+                <button type="button" id="bt1" class="btn btn-default btn-lg active a3 "  onclick="denghao()">＝</button>
+            </td>
+            <td class="a1">
+                <button type="button" id="bt2" class="btn btn-default btn-lg active a5"  onclick="chuhao()">÷</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="a1">
+                <button type="button" class="btn btn-default btn-lg active a2"  onclick="a7()">7</button>
+            </td>
+            <td class="a1">
+                <button  type="button" class="btn btn-default btn-lg active a2" onclick="a8()">8</button>
+            </td>
+            <td class="a1">
+                <button type="button" class="btn btn-default btn-lg active a2"  onclick="a9()">9</button>
+            </td>
+            <td class="a1">
+                <button type="button" id="bt3" class="btn btn-default btn-lg active a5"  onclick="chenhao()">×</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="a1">
+                <button  type="button" class="btn btn-default btn-lg active a2" onclick="a4()">4</button>
+            </td>
+            <td class="a1">
+                <button type="button" class="btn btn-default btn-lg active a2"  onclick="a5()">5</button>
+            </td>
+            <td class="a1">
+                <button  type="button" class="btn btn-default btn-lg active a2" onclick="a6()">6</button>
+            </td>
+            <td class="a1">
+                <button type="button" id="bt4" class="btn btn-default btn-lg active a3"  onclick="jianhao()">－</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="a1">
+                <button type="button" class="btn btn-default btn-lg active a2"  onclick="a1()">1</button>
+            </td>
+            <td class="a1">
+                <button  type="button" class="btn btn-default btn-lg active a2" onclick="a2()">2</button>
+            </td>
+            <td class="a1">
+                <button type="button" class="btn btn-default btn-lg active a2"  onclick="a3()">3</button>
+            </td>
+            <td class="a1">
+                <button type="button" id="bt5" class="btn btn-default btn-lg active a3" onclick="jiahao()">＋</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="a1">
+                <button  type="button" class="btn btn-default btn-lg active a6" onclick="left_k()">(</button>
+            </td>
+            <td class="a1">
+                <button  type="button" class="btn btn-default btn-lg active a2" onclick="a0()">0</button>
+            </td>
+            <td class="a1">
+                <button  type="button" class="btn btn-default btn-lg active a4" onclick="xiaoshu()">.</button>
+            </td>
+            <td class="a1">
+                <button  type="button" class="btn btn-default btn-lg active a6" onclick="right_k()">)</button>
+            </td>
+        </tr>
+    </table >
+</div>
+<script>
+    var ssd1 = document.getElementById("ssd1");
+    var ssd2 = document.getElementById("ssd2");
+    var b="";
+    var sum=0;
+    function jiahao() {
+        if(! fuhaojiewei()){
+            b+="+";
+            ssd1.value=b;
+        }
+    }
+
+    function jianhao() {
+        if(! fuhaojiewei()){
+            b+="-";
+            ssd1.value=b;
+        }
+    }
+
+    function chenhao() {
+        if(! fuhaojiewei()){
+            b+="*";
+            ssd1.value=b;
+        }
+    }
+
+    function chuhao() {
+        if(! fuhaojiewei()){
+            b+="/";
+            ssd1.value=b;
+        }
+    }
+
+    function fuhaojiewei() {
+        var c1=b.charAt(b.length-1);
+        if(c1=="+"||c1=="-"||c1=="*"||c1=="/"||c1=="."||c1=="("){
+            return true
+        }
+    }
+
+    function fuhaojiewei2() {
+        var c1=b.charAt(b.length-1);
+        if(c1=="+"||c1=="-"||c1=="*"||c1=="/"||c1=="."||c1=="("||c1==")"){
+            return true
+        }
+    }
+
+    function fuhaojiewei1() {
+        var c1=b.charAt(b.length-1);
+        if(c1=="+"||c1=="-"||c1=="*"||c1=="/"){
+            return true
+        }
+    }
+    function denghao() {
+        if(b.length==0){
+            ssd2.value="运算结果=0";
+            ssd1.value=0;
+        }else if(fuhaojiewei()){//如果运算符结尾
+            b= b.substring(0,b.length-1);//去掉结尾运算符
+            if(b.length==0){
+                ssd2.value="运算结果=0";
+            }else{
+                sum=eval(b);
+                ssd2.value="运算结果="+sum;
+                b=sum+"";
+            }
+
+        }else{//不是运算符结尾
+            sum=eval(b);
+            ssd2.value="运算结果="+sum;
+            b=sum+"";
+        }
+    }
+
+
+
+    function clean() {
+        sum=0;
+        b="";
+        ssd2.value=0;
+        ssd1.value=0;
+    }
+
+    function a1() {
+        b+=1;
+        ssd1.value=b;
+    }
+    function a2() {
+        b+=2;
+        ssd1.value=b;
+    }
+    function a3() {
+        b+=3;
+        ssd1.value=b;
+    }
+    function a4() {
+        b+=4;
+        ssd1.value=b;
+    }
+    function a5() {
+        b+=5;
+        ssd1.value=b;
+    }
+    function a6() {
+        b+=6;
+        ssd1.value=b;
+    }
+    function a7() {
+        b+=7;
+        ssd1.value=b;
+    }
+    function a8() {
+        b+=8;
+        ssd1.value=b;
+    }
+    function a9() {
+        b+=9;
+        ssd1.value=b;
+    }
+    function a0() {
+        b+=0;
+        ssd1.value=b;
+    }
+    function back1() {
+        b= b.substring(0,b.length-1);
+        if(b.length==0){
+            ssd1.value=0;
+            ssd2.value=0;
+        }else{
+            ssd1.value=b;
+        }
+    }
+    function xiaoshu() {
+        if(! fuhaojiewei2()){
+            b+=".";
+            ssd1.value=b;
+        }
+    }
+    function left_k() {
+        if(fuhaojiewei1()){
+            b+="(";
+            ssd1.value=b;
+        }
+    }
+    function right_k() {
+        if(! fuhaojiewei2() && b.length !=0){
+            b+=")";
+            ssd1.value=b;
+        }
+    }
+
+</script>
+</body>
+</html>
